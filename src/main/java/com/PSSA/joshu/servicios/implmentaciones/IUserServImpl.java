@@ -31,4 +31,13 @@ public class IUserServImpl implements IUserService {
 		return userMapping.userMapping( user );
 	}
 
+	@Override
+	public UserDTO checkUser ( String username ) {
+		User user = IUserRepository.fetchUser( username );
+		if ( user == null ) {
+			throw new NoUsersFoundExc( "No user was found during the fetch." );
+		}
+		return userMapping.userMapping( user );
+	}
+
 }

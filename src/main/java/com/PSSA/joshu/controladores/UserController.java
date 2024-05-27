@@ -27,10 +27,21 @@ public class UserController {
 	}
 
 	@GetMapping("/{username}/{password}")
-	public ResponseEntity<UserDTO> fetchUser ( @PathVariable String username, @PathVariable String rawPassword ) {
+	public ResponseEntity<UserDTO> fetchUser ( @PathVariable String username, @PathVariable String password ) {
 
 		UserDTO user = IUserService.fetchUser( username );
-		if ( user != null && PasswordEncoder.matches( rawPassword, user.getPassword() ) ) {
+		if ( user != null && PasswordEncoder.matches( password, user.getPassword() ) ) {
+			user.setLoginToken( TokenGenerator.generateToken() );
+			return ResponseEntity.ok( user );
+		} else {
+			return ResponseEntity.status( 404 ).body( null );
+		}
+	}
+
+	@GetMapping("/{username}")
+	public ResponseEntity<UserDTO> checkUser ( @PathVariable String username ) {
+		UserDTO user = IUserService.checkUser( username );
+		if ( user != null ) {
 			return ResponseEntity.ok( user );
 		} else {
 			return ResponseEntity.status( 404 ).body( null );
