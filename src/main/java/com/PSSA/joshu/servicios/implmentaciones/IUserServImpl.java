@@ -6,7 +6,6 @@ import com.PSSA.joshu.modelos.dto.UserDTO;
 import com.PSSA.joshu.modelos.entidades.User;
 import com.PSSA.joshu.modelos.mapeos.UserMapping;
 import com.PSSA.joshu.servicios.IUserService;
-import com.PSSA.joshu.utilities.TokenGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,17 +26,7 @@ public class IUserServImpl implements IUserService {
 		if ( user == null ) {
 			throw new NoUsersFoundExc( "No user was found during the fetch." );
 		}
-		user.setLoginToken( TokenGenerator.generateToken() );
 		return userMapping.userMapping( user );
 	}
-
-	@Override
-	public UserDTO checkUser ( String username ) {
-		User user = IUserRepository.fetchUser( username );
-		if ( user == null ) {
-			throw new NoUsersFoundExc( "No user was found during the fetch." );
-		}
-		return userMapping.userMapping( user );
-	}
-
+	
 }

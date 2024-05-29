@@ -40,7 +40,7 @@ public class UserController {
 
 	@GetMapping("/{username}")
 	public ResponseEntity<UserDTO> checkUser ( @PathVariable String username ) {
-		UserDTO user = IUserService.checkUser( username );
+		UserDTO user = IUserService.fetchUser( username );
 		if ( user != null ) {
 			return ResponseEntity.ok( user );
 		} else {

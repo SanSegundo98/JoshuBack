@@ -14,10 +14,9 @@ import org.springframework.stereotype.Component;
 public class UserMapping {
 	public UserDTO userMapping ( User user ) {
 		UserDTO userDTO = new UserDTO();
-		userDTO.setUserID( user.getId() );
+		userDTO.setUserID( user.getUserID() );
 		userDTO.setUsername( user.getUsername() );
 		userDTO.setPassword( user.getPassword() );
-
 		return userDTO;
 	}
 }

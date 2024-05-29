@@ -2,18 +2,24 @@ package com.PSSA.joshu.modelos.entidades;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
 @Entity
 @Table(name = "users")
 @Data
+@NoArgsConstructor
 public class User implements Serializable {
+
+	public User ( Long id ) {
+		this.userID = id;
+	}
 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
-	@Column(name = "userID", unique = true)
-	private Long id;
+	@Column(unique = true)
+	private Long userID;
 
 	@Column(nullable = false, unique = true)
 	private String password;
