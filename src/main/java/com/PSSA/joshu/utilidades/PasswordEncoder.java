@@ -1,4 +1,4 @@
-package com.PSSA.joshu.utilities;
+package com.PSSA.joshu.utilidades;
 
 import de.mkammerer.argon2.Argon2;
 import de.mkammerer.argon2.Argon2Factory;

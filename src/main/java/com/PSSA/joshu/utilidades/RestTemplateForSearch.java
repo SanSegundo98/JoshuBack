@@ -1,4 +1,4 @@
-package com.PSSA.joshu.utilities;
+package com.PSSA.joshu.utilidades;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package com.PSSA.joshu.utilities;
+package com.PSSA.joshu.utilidades;
 
 import java.security.SecureRandom;
 import java.util.Base64;

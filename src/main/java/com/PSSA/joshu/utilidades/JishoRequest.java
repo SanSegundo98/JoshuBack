@@ -1,4 +1,4 @@
-package com.PSSA.joshu.utilities;
+package com.PSSA.joshu.utilidades;
 
 import lombok.Data;
 import org.springframework.http.HttpMethod;

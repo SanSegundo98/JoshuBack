@@ -1,6 +1,6 @@
 package com.PSSA.joshu.controladores;
 
-import com.PSSA.joshu.utilities.JishoRequest;
+import com.PSSA.joshu.utilidades.JishoRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
